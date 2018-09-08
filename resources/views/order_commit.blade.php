@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <form action="/service/falipay" id="alipay" method="post">
+    <form action="/service/alipay" id="alipay" method="post">
       {{ csrf_field() }}
       <input type="hidden" name="total_price" value="{{$total_price}}" />
       <input type="hidden" name="name" value="{{$name}}" />
