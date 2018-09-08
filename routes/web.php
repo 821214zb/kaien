@@ -49,14 +49,23 @@ Route::get('/cart','View\CartController@toCart');
 //删除购物车
 Route::get('/service/cart/delete','Service\CartController@delCart');
 
+//我的订单
+Route::get('/service/order_list','View\OrderController@toOrderList');
+
 //中间件使用
 Route::group(['middleware'=>'check.login'],function (){
     //结算路由
     Route::post('/order_commit','View\OrderController@toOrderCommit');
     //支付宝支付
     Route::post('/service/alipay','Service\PayController@aliPay');
+    Route::post('/pay/notify','Service\PayController@notify');
+    Route::post('/pay/call_back','Service\PayController@callback');
+    Route::post('/pay/merchant','Service\PayController@merchant');
+    
     //微信支付
-    Route::post('/service/wxpay','Service\PayController@wxPay');
+    Route::post('/service/WXpay','Service\PayController@wxPay');
+    Route::post('/openid/get','Service\PayController@getOpenid');
+    
 });
 
 

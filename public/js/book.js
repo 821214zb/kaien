@@ -30,11 +30,11 @@ function onMenuItemClick(index) {
     $('.bk_toptips span').html("敬请期待!");
     setTimeout(function() {$('.bk_toptips').hide();}, 2000);
   } else if(index == 2) {
-    location.href = '/category';
+    location.href = '/view/category';
   } else if(index == 3){
     location.href = '/cart';
   } else if(index == 4){
-    location.href = '/order_list';
+    location.href = '/service/order_list';
   }
 }
 

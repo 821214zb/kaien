@@ -13,8 +13,8 @@ class PayController extends Controller
 {
   public function aliPay(Request $request) {
 
-    require_once(app_path() . "/Tool/Alipay/alipay.config.php");
-    require_once(app_path() . "/Tool/Alipay/lib/alipay_submit.class.php");
+    require_once(app_path() . "/Tool/alipay/alipay.config.php");
+    require_once(app_path() . "/Tool/alipay/lib/alipay_submit.class.php");
 
     //返回格式
     $format = "xml";

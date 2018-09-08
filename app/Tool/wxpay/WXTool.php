@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tool\wxpay;
+namespace App\Tool\WXpay;
 
 use Cache;
 use App\Models\BKWXPayConfig;

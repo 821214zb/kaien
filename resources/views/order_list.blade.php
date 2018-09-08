@@ -7,7 +7,7 @@
     <div class="weui_cells_title">
       <span>订单号: {{$order->order_no}}</span>
 
-        @if($order->status == 1)
+        @if($order->status == 0)
           <span style="float: right;" class="bk_price">
             未支付
           </span>
@@ -22,7 +22,7 @@
         @foreach($order->order_items as $order_item)
           <div class="weui_cell">
               <div class="weui_cell_hd">
-                <img src="{{$order_item->product->preview}}" alt="" class="bk_icon">
+                <img src="{{$order_item->product->image}}" alt="" class="bk_icon">
               </div>
               <div class="weui_cell_bd weui_cell_primary">
                 <p class="bk_summary">{{$order_item->product->name}}</p>

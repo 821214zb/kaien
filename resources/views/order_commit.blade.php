@@ -8,7 +8,7 @@
         @foreach($cart_items as $cart_item)
         <div class="weui_cell">
             <div class="weui_cell_hd">
-              <img src="{{$cart_item->product->preview}}" alt="" class="bk_icon">
+              <img src="{{$cart_item->product->image}}" alt="" class="bk_icon">
             </div>
             <div class="weui_cell_bd weui_cell_primary">
                 <p class="bk_summary">{{$cart_item->product->name}}</p>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <form action="/service/alipay" id="alipay" method="post">
+    <form action="/service/falipay" id="alipay" method="post">
       {{ csrf_field() }}
       <input type="hidden" name="total_price" value="{{$total_price}}" />
       <input type="hidden" name="name" value="{{$name}}" />
@@ -88,7 +88,7 @@
       //微信支付
     $.ajax({
       type: "POST",
-      url: '/service/wxpay',
+      url: '/service/WXpay',
       dataType: 'json',
       cache: false,
       data: {name: "{{$name}}", order_no: "{{$order_no}}", total_price: "{{$total_price}}", _token: "{{csrf_token()}}"},
