@@ -38,6 +38,7 @@
       <input type="hidden" name="total_price" value="{{$total_price}}" />
       <input type="hidden" name="name" value="{{$name}}" />
       <input type="hidden" name="order_no" value="{{$order_no}}" />
+      <input type="hidden" name="WIDbody" value="{{$order_no}}" />
     </form>
 
     <div class="weui_cells">

@@ -26,9 +26,10 @@ function onMenuItemClick(index) {
   var weuiActionsheet = $('#weui_actionsheet');
   hideActionSheet(weuiActionsheet, mask);
   if(index == 1) {
-    $('.bk_toptips').show();
-    $('.bk_toptips span').html("敬请期待!");
-    setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+      location.href = '/index';
+    // $('.bk_toptips').show();
+    // $('.bk_toptips span').html("敬请期待!");
+    // setTimeout(function() {$('.bk_toptips').hide();}, 2000);
   } else if(index == 2) {
     location.href = '/view/category';
   } else if(index == 3){

@@ -68,5 +68,47 @@ Route::group(['middleware'=>'check.login'],function (){
     
 });
 
+//凯恩书店后台
+Route::group(['prefix'=>'admin'],function (){
+    Route::get('index','Admin\IndexController@toIndex');//首页
+    Route::get('default','Admin\IndexController@toDefault');//首页左侧公告
+    Route::get('login','Admin\IndexController@toLogin');//登录
+    Route::post('check_login','Admin\IndexController@login');//登录检测
+    Route::get('exit','Admin\IndexController@toExit');//退出登录
+    
+    //书籍分类
+    Route::get('category','Admin\CategoryController@toCategory');
+    //分类添加
+    Route::get('category_add','Admin\CategoryController@toCategoryAdd');
+    Route::post('service/category/add','Admin\CategoryController@categoryAdd');
+
+    //分类编辑
+    Route::get('category_edit','Admin\CategoryController@toCategoryEdit');
+    Route::post('service/category/edit','Admin\CategoryController@CategoryEdit');
+    //分类删除
+    Route::post('service/category/del','Admin\CategoryController@categoryDel');
+
+
+    //产品管理
+    Route::get('product','Admin\ProductController@toProduct');
+    //产品添加
+    Route::get('product_add','Admin\ProductController@toProductAdd');
+    Route::post('service/product/add','Admin\ProductController@ProductAdd');
+    //获取产品详细信息
+    Route::get('product_info','Admin\ProductController@toProductInfo');
+   
+    //产品编辑
+
+});
+//文件上传方法
+Route::post('service/upload/{type}','Service\UploadController@UploadFile');
+
+
+
+
+
+
+
+
 
 
