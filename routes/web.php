@@ -22,6 +22,9 @@ Route::any('/service/validate_phone/send','Service\ValidateCodeController@sendSM
 Route::get('/login','View\MemberController@ToLogin');
 Route::get('/register','View\MemberController@ToRegister');
 
+//退出登录
+Route::get('/service/toExit','Service\MemberController@toExit');
+
 //注册路由
 Route::post('/service/register','Service\MemberController@register');
 //登录路由
@@ -49,18 +52,20 @@ Route::get('/cart','View\CartController@toCart');
 //删除购物车
 Route::get('/service/cart/delete','Service\CartController@delCart');
 
-//我的订单
-Route::get('/service/order_list','View\OrderController@toOrderList');
 
 //中间件使用
 Route::group(['middleware'=>'check.login'],function (){
+
     //结算路由
     Route::post('/order_commit','View\OrderController@toOrderCommit');
+    //我的订单
+    Route::get('/service/order_list','View\OrderController@toOrderList');
+    
     //支付宝支付
     Route::post('/service/alipay','Service\PayController@aliPay');
-    Route::post('/pay/notify','Service\PayController@notify');
-    Route::post('/pay/call_back','Service\PayController@callback');
-    Route::post('/pay/merchant','Service\PayController@merchant');
+    Route::post('/service/pay/notify','Service\PayController@aliNotify');
+    Route::any('/service/pay/call_back','Service\PayController@aliResult');
+    Route::post('/service/pay/merchant','Service\PayController@merchant');
     
     //微信支付
     Route::post('/service/WXpay','Service\PayController@wxPay');
@@ -102,6 +107,16 @@ Route::group(['prefix'=>'admin'],function (){
 });
 //文件上传方法
 Route::post('service/upload/{type}','Service\UploadController@UploadFile');
+
+
+//微信公众号接口
+Route::any('/service/index','WenXin\IndexController@index');
+//获取access_token
+Route::any('/service/get_access_token','Service\CurlController@get_access_token');
+//获取上传媒体资源的media_id
+Route::any('/service/get_media_id','Service\CurlController@get_media_id');
+//自定义按钮
+Route::any('/service/get_menu','Service\CurlController@get_menu');
 
 
 

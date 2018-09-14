@@ -15,7 +15,7 @@ class BookController extends Controller
     //分类界面
     function ToCategory(){
 
-        $CategoryList = Category::where('parent_id',0)->get();
+        $CategoryList = Category::whereNull('parent_id')->get();
 
         return  view('category')->with('categorys',$CategoryList);
     }

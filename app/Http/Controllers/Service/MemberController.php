@@ -10,7 +10,8 @@ use  App\Entity\TmpEmail;
 use  App\Entity\Member;
 use  App\Models\M3Email;
 use  App\Tool\UUID;
-use  Illuminate\Support\Facades\Mail;
+use  App\Jobs\SendEmail;
+use  Carbon\Carbon;
 class MemberController extends Controller
 {
     //注册接口
@@ -112,12 +113,11 @@ class MemberController extends Controller
             $tempEmail->save();
 
             //发送邮件
-            Mail::send('email_register', ['m3_email' => $m3_email], function ($m) use ($m3_email) {
-                // $m->from('hello@app.com', 'Your Application');
-                $m->to($m3_email->to, '尊敬的用户')
-                    ->cc($m3_email->cc)
-                    ->subject($m3_email->subject);
-            });
+//            SendEmail::handle($m3_email);
+            $job = (new SendEmail($m3_email))
+                ->delay(Carbon::now()->addMinutes(5));
+            dispatch($job);
+//           $this->dispatch(new SendEmail($m3_email));
         }
 
         $m3_result->status = 0;
@@ -170,6 +170,13 @@ class MemberController extends Controller
         return $m3_result->toJson();
     }
 
+
+    //退出登录方法
+    public function toExit(Request $request)
+    {
+        $request->session()->forget('member');
+        return view('login');
+    }
 
 
 

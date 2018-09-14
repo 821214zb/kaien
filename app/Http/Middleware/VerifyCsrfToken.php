@@ -14,6 +14,8 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         //支付宝支付异步返回路由
         '/service/pay/notify',
+        '/service/pay/call_back',
         '/service/upload/images',
+        '/service/index',
     ];
 }

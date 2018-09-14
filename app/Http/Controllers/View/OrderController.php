@@ -96,7 +96,7 @@ class OrderController extends Controller
         $order_item->product = json_decode($order_item->pdt_snapshot);
       }
     }
-
+   // p($orders);
     return view('order_list')->with('orders', $orders);
   }
 }

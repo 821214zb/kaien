@@ -36,6 +36,8 @@ function onMenuItemClick(index) {
     location.href = '/cart';
   } else if(index == 4){
     location.href = '/service/order_list';
+  }  else if(index == 5){
+    location.href = '/service/toExit';
   }
 }
 

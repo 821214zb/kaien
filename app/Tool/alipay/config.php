@@ -31,10 +31,10 @@ lDcSCrZT/Uj1w0supBY6T15TtWW73WzaZpabP2FqOnTwqq/DBFdJ5igaiGtJdcp3
 fYwArK1PZ7PSYBt7xq3aBYIK1PTIMNzCkbJfT1VoSJKkvxne5JH8",
 		
 		//异步通知地址
-		'notify_url' => "http://工程公网访问地址/alipay.trade.wap.pay-PHP-UTF-8/notify_url.php",
+		'notify_url' => "http://wwww.aslegou.top/service/pay/notify",
 		
 		//同步跳转
-		'return_url' => "http://mitsein.com/alipay.trade.wap.pay-PHP-UTF-8/return_url.php",
+		'return_url' => "http://wwww.aslegou.top/service/pay/call_back",
 
 		//编码格式
 		'charset' => "UTF-8",

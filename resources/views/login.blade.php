@@ -32,6 +32,7 @@
     <div class="weui_cells_tips"></div>
     <div class="weui_btn_area">
         <a class="weui_btn weui_btn_primary" href="javascript:;" onclick="onLoginClick();">登录</a>
+        <a class="weui_btn weui_btn_primary" style="background-color: #00a0e9" href="https://open.weixin.qq.com/connect/qrconnect?appid=wxd2846517367a2f30&redirect_uri=http://liminghulian.com/User/wxLogin&response_type=code&scope=snsapi_login&state=STATE#wechat_redirect">微信登录</a>
     </div>
     <a href="/register" class="bk_bottom_tips bk_important">没有帐号? 去注册</a>
 @endsection
@@ -121,7 +122,7 @@
                     $('.bk_toptips span').html('登录成功');
                     setTimeout(function() {$('.bk_toptips').hide();}, 2000);
 
-                    location.href = "{!!$return_url!!}";
+                    location.href = "/view/category";
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr);
