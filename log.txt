@@ -1,4 +1,5 @@
-﻿request body = <TemplateSMS>
+﻿我是master
+request body = <TemplateSMS>
                     <to>13716052241</to>
                     <appId>8a216da85f9fd676015fa5bf94790312</appId>
                     <templateId>1</templateId>
