@@ -1,4 +1,4 @@
-request body = <TemplateSMS>
+﻿request body = <TemplateSMS>
                     <to>13716052241</to>
                     <appId>8a216da85f9fd676015fa5bf94790312</appId>
                     <templateId>1</templateId>
@@ -201,7 +201,7 @@ response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <TemplateSMS>
         <smsMessageSid>0de55f2317484ff5ada819daa6e4ef00</smsMessageSid>
         <dateCreated>20180904173043</dateCreated>
-    </TemplateSMS>
+    </TemplateSMS>      
 </Response>
 
 request body = <TemplateSMS>
