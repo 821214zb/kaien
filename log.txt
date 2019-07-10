@@ -1,4 +1,4 @@
-﻿我是master
+﻿我是master1212
 request body = <TemplateSMS>
                     <to>13716052241</to>
                     <appId>8a216da85f9fd676015fa5bf94790312</appId>
@@ -16,7 +16,7 @@ request body = <TemplateSMS>
                     <to>13716052241</to>
                     <appId>8a216da85f9fd676015fa5bf94790312</appId>
                     <templateId>1</templateId>
-                    <datas><data>25726</data><data>5</data></datas>
+                    <12121 datas><data>25726</data><data>5</data></datas>
                   </TemplateSMS>
 request url = https://sandboxapp.cloopen.com:8883/2013-12-26/Accounts/8a216da85f9fd676015fa5bf9419030b/SMS/TemplateSMS?sig=6EB1E0AFCEF2A787E44E0AF8703726F2
 response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
